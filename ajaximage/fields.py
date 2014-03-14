@@ -31,7 +31,7 @@ class AjaxImageField(Field):
         super(AjaxImageField, self).__init__(*args, **kwargs)
 
     def contribute_to_class(self, cls, name, virtual_only=False):
-        super(AjaxImageField, self).contribute_to_class(cls, name, virtual_only)
+        super(AjaxImageField, self).contribute_to_class(cls, name)
         setattr(cls, self.name, self.descriptor_class(self))
 
     def get_prep_value(self, value):
